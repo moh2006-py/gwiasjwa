@@ -1,0 +1,13 @@
+[Unit]
+Description=Minecraft server
+Requires=network.target
+
+[Service]
+Type=forking
+ExecStart=/bin/sh /usr/local/bin/minecraft/start.sh
+TimeoutSec=600
+RestartSec=1min
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
